@@ -1,3 +1,4 @@
+const print = require("./print");
 // 对象深度合并
 const deepMerge = (ops1, ops2) => {
   let ops = Object.assign({}, ops1, ops2);
@@ -21,4 +22,5 @@ module.exports = {
   deepMerge,
   getRandomInt,
   sleep,
+  print,
 };
