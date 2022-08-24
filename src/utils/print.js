@@ -1,6 +1,6 @@
 const chalk = require("chalk");
 
-const print = (color, text) => {
+const print = (text, color = "green") => {
   console.log(chalk[color](text));
 };
 

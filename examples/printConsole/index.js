@@ -1,5 +1,5 @@
-const { print, sleep } = require("../src/utils");
-const ProgressBar = require("../src/utils/progress");
+const { print, sleep } = require("../../src/utils");
+const ProgressBar = require("../../src/utils/progress");
 const ora = require("ora");
 const chalk = require("chalk");
 
@@ -25,5 +25,5 @@ const chalk = require("chalk");
     }
   }, 2000);
 
-  print("> 全部数据已完成");
+  print("> 全部数据已完成", "cyan");
 })();
