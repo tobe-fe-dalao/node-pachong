@@ -1,5 +1,5 @@
 const { print, sleep } = require("../src/utils");
-const ProgressBar = require("../src/utils/progress");
+const ProgressBar = require("progress");
 const ora = require("ora");
 const chalk = require("chalk");
 
@@ -15,13 +15,11 @@ const chalk = require("chalk");
     print("> 接口已相应，准备爬取");
     const currentPage = 1;
     const pageLength = 50;
-    const progress = new ProgressBar(
-      `> 第${currentPage}页 下载进度`,
-      pageLength
-    );
+    const progress = new ProgressBar(":bar", { total: pageLength });
+
     for (let i = 0; i < pageLength; i++) {
       sleep(2000);
-      progress.render({ completed: i + 1, total: pageLength });
+      progress.tick();
     }
   }, 2000);
 

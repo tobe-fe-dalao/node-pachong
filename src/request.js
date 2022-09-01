@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { mergeObject } = require("fastool");
+const { deepMerge } = require("./utils");
 const config = require("./config");
 const defaultOptions = {
   method: "GET",
@@ -18,7 +18,7 @@ class Request {
           cookie: this.cookie || "",
         },
       });
-      const opts = mergeObject(defaultOptions, options);
+      const opts = deepMerge(defaultOptions, options);
       axios(opts)
         .then((res) => {
           let data = res.data || {};
